@@ -1,4 +1,4 @@
-package java_to_kotlin
+package java_to_kotlin.demo1
 
 import java.util.LinkedHashMap
 
@@ -8,12 +8,17 @@ import java.util.LinkedHashMap
  */
 
 internal class TestKotlin(private val map0: Map<String, String>) {
-
+    private val n: Int
 
     private val mapNull: Map<String, String>? = null
     var map1: Map<String, String> = LinkedHashMap()
     var map2: Map<String, String> = LinkedHashMap()
     val map3: Map<String, String> = LinkedHashMap()
+
+
+    init {
+        this.n = map0.size
+    }
 
     companion object {
         var map4: Map<String, String> = LinkedHashMap()

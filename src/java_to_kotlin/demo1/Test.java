@@ -1,4 +1,4 @@
-package java_to_kotlin;
+package java_to_kotlin.demo1;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -9,7 +9,6 @@ import java.util.Map;
  */
 
 class Test {
-
     private Map<String,String> mapNull;
     private Map<String,String> map0;
     private Map<String,String> map1 = new LinkedHashMap<>();
@@ -18,9 +17,11 @@ class Test {
     public static Map<String,String> map4 = new LinkedHashMap<>();
     public static final Map<String,String> map5 = new LinkedHashMap<>();
 
+    public int size;
 
-    public Test(Map<String, String> map0) {
+    public Test( Map<String, String> map0) {
         this.map0 = map0;
+        this.size = map0.size();
     }
 
     public static void main(String[] args) {

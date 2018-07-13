@@ -1,4 +1,4 @@
-package java_to_kotlin;
+package java_to_kotlin.demo1;
 
 import java.util.LinkedHashMap;
 
