@@ -1,7 +1,5 @@
 package java_to_kotlin.demo2;
 
-import javax.activation.CommandObject;
-
 /**
  * @author by LiFan
  * @date 2018/7/13
