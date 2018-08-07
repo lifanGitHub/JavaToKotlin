@@ -10,14 +10,14 @@ package java_to_kotlin.demo7
  * See http://kotlinlang.org/docs/reference/data-classes.html#data-classes
  */
 
-data class User(val name: String, val id: Int)
+data class User1(val name: String, val id: Int)
 
 fun main(args: Array<String>) {
-    val user = User("Alex", 1)
+    val user = User1("Alex", 1)
     println(user) // toString()
 
-    val secondUser = User("Alex", 1)
-    val thirdUser = User("Max", 2)
+    val secondUser = User1("Alex", 1)
+    val thirdUser = User1("Max", 2)
 
     println("user == secondUser: ${user == secondUser}")
     println("user == thirdUser: ${user == thirdUser}")

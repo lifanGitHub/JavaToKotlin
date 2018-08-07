@@ -1,5 +1,4 @@
-import java.util.function.BiConsumer
-
+package java_to_kotlin.demo7
 /**
  * This example introduces a concept that we call destructuring declarations.
  * It creates multiple variable at once. Anything can be on the right-hand
@@ -7,6 +6,7 @@ import java.util.function.BiConsumer
  * functions can be called on it.
  * See http://kotlinlang.org/docs/reference/multi-declarations.html#multi-declarations
  */
+class User0(val name: String, val id: Int)
 
 fun main(args: Array<String>) {
 
@@ -20,9 +20,8 @@ fun main(args: Array<String>) {
     for (str in list){
         println("args=$str")
     }
-
-
-
+    //    非数据类
+    //    User0("",0).copy()
 }
 
 
