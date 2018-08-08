@@ -1,15 +1,18 @@
 package java_to_kotlin.demo9
 
+import java_to_kotlin.demo9.Test2.Companion.low2
+
 /**
  * @author by LiFan
  * @date 2018/8/8
  */
 //自己写的高阶函数
-//高阶函数中的低阶函数必须是静态的吗？为什么伴生对象对象不行？
+
 fun main(args: Array<String>) {
     val t = Test2()
+    t.high(t::low)
     t.high(::low)
-
+    t.high(Test2.Companion::low2)
 }
 
 private class Test2 {
@@ -17,8 +20,12 @@ private class Test2 {
         println(low())
     }
 
+    fun low(): Long {
+        return System.currentTimeMillis()
+    }
+
     companion object {
-        fun low(): Long {
+        fun low2(): Long {
             return System.currentTimeMillis()
         }
     }
