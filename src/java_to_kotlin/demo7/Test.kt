@@ -17,11 +17,9 @@ fun main(args: Array<String>) {
         println("key = $key, value = $value")
     }
 
-    for (str in list){
-        println("args=$str")
+    for ((index,value) in list.withIndex()){
+        println("list in $index: $value")
     }
-    //    非数据类
-    //    User0("",0).copy()
 }
 
 
