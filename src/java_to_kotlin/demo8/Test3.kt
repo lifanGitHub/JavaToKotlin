@@ -3,6 +3,7 @@ package java_to_kotlin.demo8
 /**
  * @author by LiFan
  * @date 2018/8/7
+ * 使用by 代理map
  */
 class User2(val map: Map<String, Any?>) {
     val name: String by map

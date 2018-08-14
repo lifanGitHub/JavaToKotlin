@@ -1,9 +1,5 @@
 /**
- * There's some new syntax: you can say `val 'property name': 'Type' by 'expression'`.
- * The expression after by is the delegate, because get() and set() methods
- * corresponding to the property will be delegated to it.
- * Property delegates don't have to implement any interface, but they have
- * to provide methods named getValue() and setValue() to be called.</p>
+ * 代理属性
  */
 
 import kotlin.reflect.KProperty
