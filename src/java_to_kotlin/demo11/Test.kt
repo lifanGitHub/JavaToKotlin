@@ -1,4 +1,4 @@
-package java_to_kotlin.demo10
+package java_to_kotlin.demo11
 
 fun indexOfMax(a: IntArray): Int? {
     if (a.isEmpty()){

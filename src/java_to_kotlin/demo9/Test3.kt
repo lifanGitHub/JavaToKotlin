@@ -5,7 +5,7 @@ package java_to_kotlin.demo9
  * @date 2018/8/8
  */
 
-//来自于Try Kotlin 感觉高阶函数嵌套反而不容易理解
+//来自于Try Kotlin 感觉高阶函数嵌套泛型反而不容易理解
 fun main(args: Array<String>) {
     val oddLength = compose(::isOdd, ::length)
     val strings = listOf("a", "ab", "abc")
