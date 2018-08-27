@@ -4,19 +4,21 @@ package java_to_kotlin.demo12
  * @author by LiFan
  * @date 2018/8/24
  */
-class Client(val name: String, val postalCode: Int) {
+class EqualsClass(val name: String, val postalCode: Int) {
     override fun equals(other: Any?): Boolean {
-        if (other == null || other !is Client)
-            return false
+        if (other is EqualsClass)
+            return name.equals(other.name) &&
+                    postalCode.equals(other.postalCode)
+        return false
+    }
 
-        return name == other.name &&
-                postalCode == other.postalCode
+    override fun hashCode(): Int {
+        return (name + postalCode).hashCode()
     }
     override fun toString() = "Client(name=$name, postalCode=$postalCode)"
 }
 
 fun main(args: Array<String>) {
-    val processed = hashSetOf(Client("Alice", 342562))
-    println(processed.contains(Client("Alice", 342562)))
-
+    val processed = hashSetOf(EqualsClass("Alice", 342562))
+    println(processed.contains(EqualsClass("Alice", 342562)))
 }
