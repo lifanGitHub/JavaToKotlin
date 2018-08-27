@@ -23,7 +23,7 @@ class EqualsJava {
 
     @Override
     public int hashCode() {
-        return 1;
+        return Integer.valueOf(n).hashCode();
     }
 
     public static void main(String[] args) {
