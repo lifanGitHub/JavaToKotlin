@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     val list = listOf(0, 1, 2, 3, 4, 5)
     list.map { it - 1 }
     list.filter { it > 0 }
-
+    println(list.any { it != 3 })
 
     val numbers = mapOf(0 to "zero", 1 to "one")
     println(numbers.mapValues { it.value.toUpperCase() })
