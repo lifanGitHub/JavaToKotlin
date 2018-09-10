@@ -15,4 +15,4 @@
 12.扩展方法 //get set field //Set集合 hashCode equals  
 13.Any接受Lambda //Run关键字 //ForEach it 关键字 // 关键字 :: （待解决）  
 14.List常用(filter map all)操作符 // Runnable // inner class  // null 判断
-15
+15.lambda 操作符重载
