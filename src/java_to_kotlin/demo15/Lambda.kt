@@ -1,3 +1,5 @@
+@file:JvmName("OperateKt")
+
 package java_to_kotlin.demo15
 
 /**
