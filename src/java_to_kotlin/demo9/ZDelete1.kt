@@ -3,6 +3,7 @@ package java_to_kotlin.demo9
 /**
  * @author by LiFan
  * @date 2018/8/7
+ * 回顾本章节已经基本了解 可以删除
  */
 fun main(args: Array<String>) {
     val numbers = listOf(1, 2, 3)
