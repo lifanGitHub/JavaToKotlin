@@ -7,11 +7,13 @@ package java_to_kotlin.demo14
  */
 fun main(args: Array<String>) {
     val list = listOf(0, 1, 2, 3, 4, 5)
+
     list.map { it - 1 }
     list.filter { it > 0 }
     list.any { it != 3 }
     list.find { it % 2 == 0}
-    list.groupBy { it.toString() } //转换为Map
+    list.groupBy { it.toString() }          //转换为Map
+    list.slice(1..5 step 2)          //截取index 1 3 5
 
     val strings = listOf("abc", "def")
     println(strings.flatMap { it.toList() })
