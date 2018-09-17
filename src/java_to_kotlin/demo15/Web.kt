@@ -13,4 +13,5 @@ fun printMessagesWithPrefix(messages: Collection<String>, prefix: String) {
 fun main(args: Array<String>) {
     val errors = listOf("403 Forbidden", "404 Not Found")
     printMessagesWithPrefix(errors, "Error:")
+
 }

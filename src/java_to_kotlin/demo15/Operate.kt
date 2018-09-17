@@ -1,5 +1,3 @@
-package java_to_kotlin.demo15
-
 /**
  * @author by LiFan
  * @date 2018/9/10
