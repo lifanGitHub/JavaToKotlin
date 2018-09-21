@@ -9,7 +9,7 @@ package leet_code
  * 输出: 3
  * 解释: 无重复字符的最长子串是 "abc"，其长度为 3。
  */
-private class Solution {
+class P3 {
     fun lengthOfLongestSubstring(s: String): Int {
         var max = 0
         for ( i in s.indices){
@@ -29,6 +29,6 @@ private class Solution {
 }
 
 fun main(args: Array<String>) {
-    println(Solution().lengthOfLongestSubstring(" "))
+    println(P3().lengthOfLongestSubstring(" "))
 
 }
