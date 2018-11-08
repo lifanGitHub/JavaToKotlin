@@ -1,5 +1,8 @@
 package leet_code
 
+import java.lang.Math.abs
+import java.lang.Math.min
+
 /**
  * @author by LiFan
  * @date 2018/11/6
@@ -9,15 +12,15 @@ package leet_code
  * 说明：你不能倾斜容器，且 n 的值至少为 2。
  *
  */
-class Solution {
+class P11 {
     fun maxArea(height: IntArray): Int {
         var maxLength = 0
         //起点
         for (i in height.indices){
             //遍历点
             for (j in height.indices){
-                val length = Math.abs(i - j)
-                val heightNow = Math.min(height[i],height[j])
+                val length = abs(i - j)
+                val heightNow = min(height[i],height[j])
                 if (length * heightNow > maxLength){
                     maxLength = length * heightNow
                 }
@@ -29,5 +32,5 @@ class Solution {
 }
 
 fun main(args: Array<String>) {
-    print(Solution().maxArea(intArrayOf(3,5,3,5,3)))
+    print(P11().maxArea(intArrayOf(3,5,3,5,3)))
 }
