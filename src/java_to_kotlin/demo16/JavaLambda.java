@@ -6,12 +6,10 @@ package java_to_kotlin.demo16;
  */
 
 public class JavaLambda {
-    public Interface0 i0;
-    public Interface1 i1;
-    public Interface2 i2;
-    public InterfaceX ix;
-//    public InterfaceY i2;
-
+    private Interface0 i0;
+    private Interface1 i1;
+    private Interface2 i2;
+    private InterfaceX ix;
 
     public static void main(String[] args) {
         JavaLambda lambda = new JavaLambda();
@@ -25,6 +23,8 @@ public class JavaLambda {
         //lambda不允许
 //        lambda.ix = () -> System.out.println("hello") ;
     }
+
+
 
     public interface Interface0{
         void fun0();
@@ -42,6 +42,10 @@ public class JavaLambda {
         void funX1();
         String funX2(String s1,String s2);
     }
+
+//    public void funTest(FunctionalInterface func){
+//
+//    }
 
 }
 
