@@ -1,11 +1,11 @@
-package javasrc.encrypt;
+package javasrc.util;
 
 /**
  * @author by LiFan
  * @date 2018/7/31
  */
 
-class HexUtil {
+public class HexUtil {
     public static String bytesToHexString(byte[] bArray) {
         StringBuilder sb = new StringBuilder(bArray.length);
         String sTemp;
@@ -18,4 +18,9 @@ class HexUtil {
         }
         return sb.toString();
     }
+
+    public static String getUserDir(){
+        return System.getProperty("user.dir");
+    }
+
 }
