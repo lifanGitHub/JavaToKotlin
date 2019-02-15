@@ -23,7 +23,6 @@ class ClassLoadTest {
         Class.forName("javasrc.classload.A");
         step();
 
-
     }
 
     static int x = 1;
