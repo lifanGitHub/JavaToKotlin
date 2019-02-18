@@ -1,0 +1,2 @@
+元标签有 @Retention、@Documented、@Target、@Inherited、@Repeatable
+Java 预置的注解 @Deprecated @Override @FunctionalInterface
