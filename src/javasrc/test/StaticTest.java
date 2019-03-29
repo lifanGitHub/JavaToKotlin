@@ -27,7 +27,7 @@ class StaticTest {
     StaticTest()
     {
         System.out.println("3");
-        System.out.println("a="+a+",b="+b);//0  112
+        System.out.println("a="+a+",b="+b);
     }
 
     public static void staticFunction(){//4
