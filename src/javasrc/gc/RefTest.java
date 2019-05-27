@@ -3,9 +3,7 @@ package javasrc.gc;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author by LiFan
@@ -14,10 +12,9 @@ import java.util.Map;
 
 public class RefTest {
 
-    private static ReferenceQueue<byte[]> rq = new ReferenceQueue<byte[]>();
-    private static int _1M = 1024*1024;
+    private static ReferenceQueue<String> rq = new ReferenceQueue<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         List<WeakReference> list = new ArrayList<>();
 
         Thread thread = new Thread(() -> {
@@ -26,19 +23,26 @@ public class RefTest {
                 WeakReference<byte[]> k;
                 while((k = (WeakReference) rq.remove()) != null) {
                     System.out.println((cnt++) + "回收了:" + k);
-                }
-            } catch(InterruptedException e) {
+                    // !!! 我们只收到了一个通知 !!!
+                    // 此时 k.get() == null 即此刻指向的对象已经被回收了
+                 }
+            } catch(Exception e) {
             }
         });
-        thread.setDaemon(true);
+//        thread.setDaemon(false);
         thread.start();
 
-        for(int i = 0;i < 10000;i++) {
-            byte[] bytes = new byte[_1M];
-            WeakReference<byte[]> weakReference = new WeakReference<>(bytes, rq);
+        Thread.sleep(1000);
+
+        for(int i = 0;i < 12;i++) {
+            String str = String.valueOf(i);
+            WeakReference<String> weakReference = new WeakReference<>(str, rq);
             list.add(weakReference);
         }
-        System.out.println("list.size->" + list.size());
+        System.gc();
 
+        //结束线程
+        Thread.sleep(2000);
+        thread.interrupt();
     }
 }
