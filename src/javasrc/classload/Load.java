@@ -1,4 +1,4 @@
-package javasrc.test;
+package javasrc.classload;
 
 /**
  * @author by wuYang
@@ -7,13 +7,13 @@ package javasrc.test;
  * 对象的初始化是先初始化成员变量再执行构造方法
  */
 
-class StaticTest {
+class Load {
     public static void main(String[] args)
     {
         staticFunction();
     }
 
-    static StaticTest st = new StaticTest();
+    static Load st = new Load();
 
     static
     {
@@ -24,7 +24,7 @@ class StaticTest {
         System.out.println("2");
     }
 
-    StaticTest()
+    Load()
     {
         System.out.println("3");
         System.out.println("a="+a+",b="+b);
