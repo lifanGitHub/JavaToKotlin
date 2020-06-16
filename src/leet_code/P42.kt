@@ -28,22 +28,28 @@ fun forHeight(arr: IntArray, index: Int): Int {
     return -1
 }
 
-fun main() {
-    trap(arrayOf(0,1,0,2,1,0,1,3,2,1,2,1).toIntArray())
-}
+    fun trap(height: IntArray): Int {
+        var index = 0
+        var all = 0
+        while (index < height.size) {
+            val tarIndex = forHeight(height, index)
+            if (tarIndex == -1) {
+                index++
+                continue
+            }
+            val min = if (height[tarIndex] > height[index]) height[index] else height[tarIndex]
+            var v = (tarIndex - index - 1) * (min)
+            var delV = 0
+            ((index + 1) until tarIndex).forEach { i ->
+                v -= height[i]
+            }
+            all += v
+            index = tarIndex
+        }
 
-
-fun trap(height: IntArray): Int {
-    var index = 0
-    while (index < height.size) {
-        println(forHeight(height,index))
-
-
-
-        index++
+        return all
     }
 
-
-
-    return 0
+fun main() {
+    print(trap(arrayOf(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1).toIntArray()))
 }
