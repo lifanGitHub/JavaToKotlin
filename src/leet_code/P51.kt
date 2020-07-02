@@ -9,9 +9,9 @@ package leet_code
  */
 
 class Solution51 {
-    class Board(val N: Int) {
+    open class Board(val N: Int) {
         val result  = ArrayList<List<String>>()
-        private val board = Array(N) { BooleanArray(N) }
+        val board = Array(N) { BooleanArray(N) }
         fun checkPoint(x: Int, y: Int): Boolean {
             //斜角
             for (i in (0 until N)) {
@@ -57,7 +57,7 @@ class Solution51 {
             result.add(list)
         }
 
-        fun recall(stepY: Int) {
+        open fun recall(stepY: Int) {
             if (stepY == N) {
                 toResult()
                 return
@@ -72,7 +72,7 @@ class Solution51 {
             }
         }
 
-        fun start(): List<List<String>> {
+        open fun start(): List<List<String>> {
             recall(0)
             return result
         }
