@@ -6,13 +6,13 @@ import java.lang.RuntimeException
  * Author: LiFan
  * Date: 2020/7/2
  * Description:
- * 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。给定一个包含 m x n 个元素的矩阵（m 行, n 列），
- * 请按照顺时针螺旋顺序，返回矩阵中的所有元素。
+ * 给定一个正整数 n，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的正方形矩阵。
  */
 
-class Solution54 {
-    class Matrix(private val matrix: Array<IntArray>) {
-        private val matrixFlag: Array<BooleanArray> = Array<BooleanArray>(matrix.size) { BooleanArray(matrix[0].size) }
+class Solution59 {
+    class Matrix(private val n: Int) {
+        private val matrix: Array<IntArray> = Array<IntArray>(n) { IntArray(n) }
+        private val matrixFlag: Array<BooleanArray> = Array<BooleanArray>(n) { BooleanArray(n) }
         private var direction = 0
         private var x = 0
         private var y = 0
@@ -36,26 +36,25 @@ class Solution54 {
             throw RuntimeException("xxx")
         }
 
-        fun start():  List<Int> {
-            val result = mutableListOf<Int>()
-            if (matrix.isEmpty() || matrix[0].isEmpty()){
-                return result
-            }
-
-            (0 until matrix.size * matrix[0].size).forEach { i ->
-//            print("${matrix[y][x]}_")
-                result += matrix[y][x]
+        fun start(): Array<IntArray> {
+            for (i in (1..n * n)) {
                 if (!checkNext()) {
                     direction++
                 }
+                matrix[y][x] = i
                 matrixFlag[y][x] = true
                 nextPoint()
             }
-            return result
+
+            return matrix
         }
     }
 }
 
+
+
+
+
 fun main() {
-    val a = Solution54.Matrix(arrayOf(arrayOf(1, 2, 3, 0).toIntArray(), arrayOf(8, 9, 4, 0).toIntArray(), arrayOf(7, 6, 5, 0).toIntArray())).start()
+//    val a = Matrix(3).start()
 }
