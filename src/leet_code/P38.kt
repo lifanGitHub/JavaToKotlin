@@ -1,7 +1,5 @@
 package leet_code
 
-import leet_code.A.sayHI
-
 /**
  * Author: LiFan
  * Date: 2020/6/16

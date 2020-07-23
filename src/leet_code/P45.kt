@@ -4,6 +4,9 @@ package leet_code
  * Author: LiFan
  * Date: 2020/6/17
  * Description:
+ * 给定一个非负整数数组，你最初位于数组的第一个位置。
+ * 数组中的每个元素代表你在该位置可以跳跃的最大长度。
+ * 你的目标是使用最少的跳跃次数到达数组的最后一个位置。
  */
 
 
@@ -19,44 +22,46 @@ fun main() {
 
 
 class Solution45 {
-    class A {
-        var times = Int.MAX_VALUE
 
-        fun jump(nums: IntArray): Int {
-            if (nums.size <= 1) {
-                return 0
-            }
-            findAll(nums, 0, 1)
-            return times
-        }
-
-        fun findAll(nums: IntArray, index: Int, times: Int) {
-            val step = nums[index]
-
-            //永不可达
-            if (step == 0) return
-            //优化 若已经大于当前 则不再继续尝试
-            if (times >= this.times) return
-
-            if (index + step >= nums.size - 1) {
-                if (times < this.times) {
-                    this.times = times
-//                    println("经历时间$times")
-                }
-            } else {
-                (step downTo 1).forEach {
-                    findAll(nums, index + it, times + 1)
-                }
-
-            }
-
-        }
-    }
 
 
     fun jump(nums: IntArray): Int {
         return A().jump(nums)
     }
 
+}
+
+class A {
+    var times = Int.MAX_VALUE
+
+    fun jump(nums: IntArray): Int {
+        if (nums.size <= 1) {
+            return 0
+        }
+        findAll(nums, 0, 1)
+        return times
+    }
+
+    fun findAll(nums: IntArray, index: Int, times: Int) {
+        val step = nums[index]
+
+        //永不可达
+        if (step == 0) return
+        //优化 若已经大于当前 则不再继续尝试
+        if (times >= this.times) return
+
+        if (index + step >= nums.size - 1) {
+            if (times < this.times) {
+                this.times = times
+//                    println("经历时间$times")
+            }
+        } else {
+            (step downTo 1).forEach {
+                findAll(nums, index + it, times + 1)
+            }
+
+        }
+
+    }
 }
 
