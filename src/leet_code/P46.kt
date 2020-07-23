@@ -11,35 +11,33 @@ import java.util.*
  */
 
 class Solution46 {
-
-}
-
-fun permute(nums: IntArray): List<List<Int>> {
-    recall(nums, LinkedList<Int>())
-    return result
-}
-
-val result = LinkedList<List<Int>>()
-
-fun recall(nums: IntArray, list: MutableList<Int>) {
-    if (list.size == nums.size) {
-        //完成
-        result.add(LinkedList(list))
-        return
+    fun permute(nums: IntArray): List<List<Int>> {
+        recall(nums, LinkedList<Int>())
+        return result
     }
-    for (it in nums) {
-        if (list.contains(it)) {
-            continue
+
+    val result = LinkedList<List<Int>>()
+
+    fun recall(nums: IntArray, list: MutableList<Int>) {
+        if (list.size == nums.size) {
+            //完成
+            result.add(LinkedList(list))
+            return
         }
-        list.add(it)
-        recall(nums, list)
-        list.removeAt(list.size - 1)
-    }
+        for (it in nums) {
+            if (list.contains(it)) {
+                continue
+            }
+            list.add(it)
+            recall(nums, list)
+            list.removeAt(list.size - 1)
+        }
 
-    //添加一个元素 无论是否正确
+        //添加一个元素 无论是否正确
+    }
 }
 
 fun main() {
-    permute(arrayOf(1, 2, 3).toIntArray())
+    Solution46().permute(arrayOf(1, 2, 3).toIntArray())
 
 }
