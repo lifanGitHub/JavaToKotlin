@@ -6,9 +6,9 @@
 
 记录了学习Java/Kotlin的历程<br />
 动手比看书重要 <br />
-目标是在2018年年底熟练使用Kotlin开发(大体上实现)Android<br />
+目标是在2018年年底熟练使用Kotlin开发(实现)Android<br />
 
-###Kotlin项目目录  
+### Kotlin项目目录  
 6.全局函数 可变参数的调用  
 7.只读Map List的创建 遍历 // data class 的使用  
 8.代理属性和懒加载  
