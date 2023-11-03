@@ -9,9 +9,9 @@ package leet_code
 class P15{
 
 
-//    fun threeSum(nums: IntArray): List<List<Int>> {
-
-//    }
+    fun threeSum(nums: IntArray): List<List<Int>>? {
+        return null
+    }
 }
 
 fun main(args: Array<String>) {
