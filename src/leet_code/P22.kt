@@ -11,6 +11,8 @@ import java.lang.StringBuilder
  */
 
 class P22 {
+    val sb = StringBuilder()
+
     fun IntArray.checkNext(index: Int): Boolean {
         var sum = 0
         for (i in 0..index) {
@@ -50,7 +52,7 @@ class P22 {
     }
 
     fun addString(array: IntArray,result: MutableList<String>){
-        val sb = StringBuilder()
+        sb.clear()
         for (it in array){
             if (it == 1) sb.append('(')
             if (it == -1) sb.append(')')
