@@ -9,9 +9,9 @@ package leet_code
 class ListNode(var `val`: Int) {
     var next: ListNode? = null
 
-    constructor(list : Array<Int>):this(list[0]){
+    constructor(list: Array<Int>) : this(list[0]) {
         var listNode = this
-        for (i in (1 until  list.size)){
+        for (i in (1 until list.size)) {
             val newNode = ListNode(list[i])
             listNode.next = newNode
             listNode = newNode
@@ -20,15 +20,17 @@ class ListNode(var `val`: Int) {
 
     fun print() {
         var listNode: ListNode? = this
-        while (listNode!=null){
-            print("${listNode.`val`}->")
+        val sb = StringBuilder()
+        while (listNode != null) {
+            sb.append("${listNode.`val`}->")
             listNode = listNode.next
         }
-        println("null")
+        sb.append("null")
+        println(sb.toString())
     }
 
 }
 
 fun main() {
-    ListNode(arrayOf(1,2,3,4)).print()
+    ListNode(arrayOf(1,2,3)).print()
 }
